@@ -66,6 +66,7 @@ with open('dog_urls.txt', encoding='utf8') as f:
 @client.event
 #when the bot is ready
 async def on_ready():
+    await client.change_presence(activity=discord.Game('\"buzz help\" for commands!'))
     print(f'{client.user.name} has connected to Discord!')
 
 @client.event
