@@ -3,11 +3,15 @@ from discord.ext import commands
 import random
 from datetime import date
 import threading
+import os
+from dotenv import load_dotenv
 
+load_dotenv('.env')
+token = os.getenv('DISCORD_TOKEN')
+
+client = discord.Client()
 client = commands.Bot(command_prefix = 'buzz ')
 client.remove_command('help')
-token = 'ODAwMTAwMzE1MTg5MzQ2MzE2.YANNfA.A3ThDWdomTzPlWMg_WEGhWnGHDw'
-
 
 #negative words
 negative_words = ['bad', 'suck', 'loser']
